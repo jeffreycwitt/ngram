@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<ArrayofNgramItem>
+    <NgramItem>
+        <Frequency>5</Frequency>
+        <Ngram>Helllo How</Ngram>
+    </NgramItem>
+    <NgramItem>
+        <Frequency>6</Frequency>
+        <Ngram>H How</Ngram>
+    </NgramItem>
+    <NgramItem>
+        <Frequency>7</Frequency>
+        <Ngram>Helllo You</Ngram>
+    </NgramItem>
+    <NgramItem>
+        <Frequency>5</Frequency>
+        <Ngram>Helllo How</Ngram>
+    </NgramItem>
+    <NgramItem>
+        <Frequency>5</Frequency>
+        <Ngram>Helllo How</Ngram>
+    </NgramItem>
+    <NgramItem>
+        <Frequency>5</Frequency>
+        <Ngram>Helllo How</Ngram>
+    </NgramItem>
+    <NgramItem>
+        <Frequency>5</Frequency>
+        <Ngram>Helllo How</Ngram>
+    </NgramItem>
+    <NgramItem>
+        <Frequency>5</Frequency>
+        <Ngram>Helllo How</Ngram>
+    </NgramItem>
+</ArrayofNgramItem>
+
