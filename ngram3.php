@@ -40,7 +40,7 @@ gadgets.io.makeRequest(callUrl, serverResults, params)
 }
 </script>
 <?php
-    include("ngram3html.html")
+    include("ngram3html.html");
  ?>
 
 
