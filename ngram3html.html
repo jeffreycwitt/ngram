@@ -1,0 +1,83 @@
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+function displayXML(xml)
+{
+$('#displayBox').html("");
+$('#displayBox').append("<table class='ngramGroup'>");
+$(xml).find('NgramItem').each(function() {
+$('.ngramGroup').append("<tr class='ngramItem'><td class='frequency'>" + $(this).children('frequency').text() + "</td><td class='ngram'>" + $(this).children('Ngram').text() + "</td></tr>");
+       });
+
+        }
+
+function serverResults(o) {
+ var xml = $.parseXML(o.text);
+ var error = $(xml).find('error');
+ if (error && error.length)
+       {
+      $('#displayBox').html($(error).attr('message'));
+       }
+  else
+    {
+    displayXML(xml)
+    }
+ }
+
+$(document).ready(function() {
+
+        $("#ngramForm").submit(function(event) {
+
+        /* stop form from submitting normally */
+        event.preventDefault();
+
+ /* get some values from elements on the page: */
+        var $form = $( this ),
+        teiXmlUrl = $form.find( 'input[name="teiXmlUrl"]' ).val(),
+        ngramLength = $form.find( 'input[name="ngramLength"]').val(),
+        collocationSpan = $form.find( 'input[name="collocationSpan"]').val();
+
+        sendToServer(teiXmlUrl, ngramLength, collocationSpan, serverResults);
+        });
+});
+
+
+
+ </script>
+<style type="text/css">
+ul.ngramItem{border-bottom: 1px solid black; margin-bottom: 2px;}
+li.frequency{float:left;}
+li.ngram{float: left;}
+td.label {width: 150px; border-bottom: 1px solid blue;}
+table.ngramGroup tr:nth-child(even) {background: lightgray;}
+table.ngramGroup tr:nth-child(odd) {background: white;}
+</style>
+
+
+
+<form id="ngramForm">
+<table style="clear: both;">
+<tr>
+<td class="label"><label for="teiXmlUrl">URL Location</label></td>
+<td><input id="teiXmlUrl" name="teiXmlUrl" type="text"/></td>
+</tr>
+<tr>
+ <td class="label"><label for="ngramLength">N-Gram Length</label></td>
+ <td><input id="ngramLength" name="ngramLength" type="text"/></td>
+</tr>
+<tr>
+ <td class="label"><label for="collocationSpan">Collocation Span</label></td>
+ <td><input id="collocationSpan" name="collocationSpan" type="text"/></td>
+</tr>
+<tr>
+ <td></td>
+ <td><input value="Run Ngram" type="submit"/></td>
+</tr>
+</table>
+</form>
+<div id="displayBox" style="clear: both;">
+
+</div>
+
