@@ -18,7 +18,7 @@ echo "<?xml version=\"1.0\"?>";
   author_email="jeffreycwitt@gmail.com"
   description="Ngram Extractor"
   height="300"
-  title_url="http://wordchorus.com/ngram/ngram.asmx?op=ExtractNgrams"
+  title_url="http://henrylynam.com/ngram/ngram.asmx?op=ExtractNgrams"
   scrolling="true"
   />
 
@@ -35,7 +35,7 @@ var params = {};
 params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.GET;
 //params[gadgets.io.RequestParameters.POST_DATA] = gadgets.io.encodeValues(postData);
 var parameter = "?" + gadgets.io.encodeValues(postData);
-var callUrl = 'http://wordchorus.com/ngram/ngram.asmx/ExtractNgrams' + parameter;
+var callUrl = 'http://henrylynam.com/ngram/ngram.asmx/ExtractNgrams' + parameter;
 gadgets.io.makeRequest(callUrl, serverResults, params)
 }
 </script>
